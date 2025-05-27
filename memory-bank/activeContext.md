@@ -1,27 +1,22 @@
 # Active Context: Analyzátor Dabingových Scenárov
 
 ## Current Focus
-1. Implementing core document parsing in parser.py
-2. Setting up Streamlit application framework
-3. Developing initial data processing pipeline
+1. **Implementing configurable nominal segment durations.**
+2. **Refining and debugging the optimal scheduling logic.**
+3. Ensuring robust handling of Streamlit session state for new inputs.
 
 ## Recent Changes
-- Created memory bank documentation structure
-- Installed required dependencies
-- Initialized project architecture files
+- Added input fields for nominal segment durations (1, 2, 3, 4, 5+ speakers) in `app.py`.
+- Modified `analyzer/data_processing.py` to calculate `SegmentDuration` based on these nominal durations, replacing timecode-based calculation.
+- Updated `analyzer/scheduler.py` to include a basic greedy scheduling algorithm that considers speaker availability and global recording slots.
+- Fixed `KeyError` in `app.py` by moving `nominal_durations` initialization to the global scope.
+- Fixed `TypeError` in `analyzer/scheduler.py` by casting `segment['duration']` to `float` for `timedelta` calculation.
 
 ## Next Steps
-1. Complete parser.py implementation:
-   - Speaker identification logic
-   - Timecode extraction
-   - Scene marker detection
-2. Develop Streamlit UI components:
-   - File upload interface
-   - Data preview section
-   - Export controls
-3. Implement Excel export functionality
+1. **Verify the application runs without errors** and the new nominal duration inputs function correctly.
+2. **Test the optimal scheduling logic** with various inputs to ensure it produces reasonable results.
+3. Continue to refine the scheduling algorithm if needed based on testing.
 
 ## Open Questions
-- Should we support additional document formats beyond DOCX?
-- What validation rules are needed for timecode formats?
-- How to handle multi-speaker dialogues?
+- How should the optimal scheduling algorithm prioritize segments if multiple options exist? (Currently, it prioritizes multi-speaker segments then by duration descending).
+- Are there specific constraints or preferences for scheduling that need to be incorporated (e.g., minimizing studio time, specific speaker preferences)?
