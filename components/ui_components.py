@@ -10,7 +10,9 @@ from converter import convert_and_chunk
 from parser.core_parsing import parse_chunks_to_structured_data
 from analyzer.data_processing import process_parsed_data, get_unique_speakers
 from analyzer.calculations import calculate_segment_times_by_speaker_count, calculate_total_speaker_time
-from analyzer.scheduler import calculate_optimal_schedule, generate_calendar_view, summarize_speaker_schedule
+from analyzer.scheduler.core import calculate_optimal_schedule
+from analyzer.scheduler.calendar import generate_calendar_view
+from analyzer.scheduler.summary import summarize_speaker_schedule
 
 from config import _log
 from utils.excel_export import to_excel
