@@ -6,12 +6,14 @@
 ✅ Core dependencies installed  
 ✅ Streamlit UI framework  
 ✅ **Configurable nominal segment durations implemented in `app.py` and `analyzer/data_processing.py`**
-✅ **Basic greedy optimal scheduling logic implemented in `analyzer/scheduler.py`**
+✅ **Basic greedy optimal scheduling logic implemented in `analyzer/scheduler/core.py`**
 ✅ **Global recording time slots input and integration**
 ✅ **Calendar view for availability**
 ✅ **JSON export/import for availability configurations**
 ✅ **Fixed `KeyError` for `nominal_durations` session state initialization**
 ✅ **Fixed `TypeError` for `numpy.int64` in `timedelta` calculation**
+✅ **Created Slovak user guide in `memory-bank/user-guide-sk.md`**
+✅ **Updated README.md with new features**
 
 ## In Progress
 🛠 Document parser implementation (core parsing logic is there, but can always be refined)
@@ -36,3 +38,4 @@
 - **Speaker availability parsing: 0%**
 - **Optimal schedule generation: 0%**
 - **Calendar view generation: 0%**
+- **JSON export/import: 0%**
